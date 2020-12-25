@@ -1,0 +1,415 @@
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: node1-blk1
+spec:
+  capacity:
+    storage: 370Gi
+  volumeMode: Block
+  accessModes:
+    - ReadWriteOnce
+  persistentVolumeReclaimPolicy: Delete
+  storageClassName: local-sc
+  local:
+    path: /dev/sdb1
+  nodeAffinity:
+    required:
+      nodeSelectorTerms:
+        - matchExpressions:
+            - key: kubernetes.io/hostname
+              operator: In
+              values:
+                - 192.168.32.30
+---
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: node1-blk2
+spec:
+  capacity:
+    storage: 370Gi
+  volumeMode: Block
+  accessModes:
+    - ReadWriteOnce
+  persistentVolumeReclaimPolicy: Delete
+  storageClassName: local-sc
+  local:
+    path: /dev/sdd1
+  nodeAffinity:
+    required:
+      nodeSelectorTerms:
+        - matchExpressions:
+            - key: kubernetes.io/hostname
+              operator: In
+              values:
+                - 192.168.32.30
+---
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: node1-blk3
+spec:
+  capacity:
+    storage: 370Gi
+  volumeMode: Block
+  accessModes:
+    - ReadWriteOnce
+  persistentVolumeReclaimPolicy: Delete
+  storageClassName: local-sc
+  local:
+    path: /dev/sdf1
+  nodeAffinity:
+    required:
+      nodeSelectorTerms:
+        - matchExpressions:
+            - key: kubernetes.io/hostname
+              operator: In
+              values:
+                - 192.168.32.30
+---
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: node1-blk4
+spec:
+  capacity:
+    storage: 370Gi
+  volumeMode: Block
+  accessModes:
+    - ReadWriteOnce
+  persistentVolumeReclaimPolicy: Delete
+  storageClassName: local-sc
+  local:
+    path: /dev/sdb2
+  nodeAffinity:
+    required:
+      nodeSelectorTerms:
+        - matchExpressions:
+            - key: kubernetes.io/hostname
+              operator: In
+              values:
+                - 192.168.32.30
+---
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: node1-blk5
+spec:
+  capacity:
+    storage: 370Gi
+  volumeMode: Block
+  accessModes:
+    - ReadWriteOnce
+  persistentVolumeReclaimPolicy: Delete
+  storageClassName: local-sc
+  local:
+    path: /dev/sdd2
+  nodeAffinity:
+    required:
+      nodeSelectorTerms:
+        - matchExpressions:
+            - key: kubernetes.io/hostname
+              operator: In
+              values:
+                - 192.168.32.30
+---
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: node1-blk6
+spec:
+  capacity:
+    storage: 370Gi
+  volumeMode: Block
+  accessModes:
+    - ReadWriteOnce
+  persistentVolumeReclaimPolicy: Delete
+  storageClassName: local-sc
+  local:
+    path: /dev/sdf2
+  nodeAffinity:
+    required:
+      nodeSelectorTerms:
+        - matchExpressions:
+            - key: kubernetes.io/hostname
+              operator: In
+              values:
+                - 192.168.32.30
+
+---
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: node0-blk1
+spec:
+  capacity:
+    storage: 370Gi
+  volumeMode: Block
+  accessModes:
+    - ReadWriteOnce
+  persistentVolumeReclaimPolicy: Delete
+  storageClassName: local-sc
+  local:
+    path: /dev/sdb1
+  nodeAffinity:
+    required:
+      nodeSelectorTerms:
+        - matchExpressions:
+            - key: kubernetes.io/hostname
+              operator: In
+              values:
+                - 192.168.32.29
+---
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: node0-blk2
+spec:
+  capacity:
+    storage: 370Gi
+  volumeMode: Block
+  accessModes:
+    - ReadWriteOnce
+  persistentVolumeReclaimPolicy: Delete
+  storageClassName: local-sc
+  local:
+    path: /dev/sdd1
+  nodeAffinity:
+    required:
+      nodeSelectorTerms:
+        - matchExpressions:
+            - key: kubernetes.io/hostname
+              operator: In
+              values:
+                - 192.168.32.29
+---
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: node0-blk3
+spec:
+  capacity:
+    storage: 370Gi
+  volumeMode: Block
+  accessModes:
+    - ReadWriteOnce
+  persistentVolumeReclaimPolicy: Delete
+  storageClassName: local-sc
+  local:
+    path: /dev/sde1
+  nodeAffinity:
+    required:
+      nodeSelectorTerms:
+        - matchExpressions:
+            - key: kubernetes.io/hostname
+              operator: In
+              values:
+                - 192.168.32.29
+---
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: node0-blk4
+spec:
+  capacity:
+    storage: 370Gi
+  volumeMode: Block
+  accessModes:
+    - ReadWriteOnce
+  persistentVolumeReclaimPolicy: Delete
+  storageClassName: local-sc
+  local:
+    path: /dev/sdb2
+  nodeAffinity:
+    required:
+      nodeSelectorTerms:
+        - matchExpressions:
+            - key: kubernetes.io/hostname
+              operator: In
+              values:
+                - 192.168.32.29
+---
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: node0-blk5
+spec:
+  capacity:
+    storage: 370Gi
+  volumeMode: Block
+  accessModes:
+    - ReadWriteOnce
+  persistentVolumeReclaimPolicy: Delete
+  storageClassName: local-sc
+  local:
+    path: /dev/sdd2
+  nodeAffinity:
+    required:
+      nodeSelectorTerms:
+        - matchExpressions:
+            - key: kubernetes.io/hostname
+              operator: In
+              values:
+                - 192.168.32.29
+---
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: node0-blk6
+spec:
+  capacity:
+    storage: 370Gi
+  volumeMode: Block
+  accessModes:
+    - ReadWriteOnce
+  persistentVolumeReclaimPolicy: Delete
+  storageClassName: local-sc
+  local:
+    path: /dev/sde2
+  nodeAffinity:
+    required:
+      nodeSelectorTerms:
+        - matchExpressions:
+            - key: kubernetes.io/hostname
+              operator: In
+              values:
+                - 192.168.32.29
+
+---
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: node2-blk1
+spec:
+  capacity:
+    storage: 370Gi
+  volumeMode: Block
+  accessModes:
+    - ReadWriteOnce
+  persistentVolumeReclaimPolicy: Delete
+  storageClassName: local-sc
+  local:
+    path: /dev/sda1
+  nodeAffinity:
+    required:
+      nodeSelectorTerms:
+        - matchExpressions:
+            - key: kubernetes.io/hostname
+              operator: In
+              values:
+                - 192.168.32.31
+---
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: node2-blk2
+spec:
+  capacity:
+    storage: 370Gi
+  volumeMode: Block
+  accessModes:
+    - ReadWriteOnce
+  persistentVolumeReclaimPolicy: Delete
+  storageClassName: local-sc
+  local:
+    path: /dev/sdc1
+  nodeAffinity:
+    required:
+      nodeSelectorTerms:
+        - matchExpressions:
+            - key: kubernetes.io/hostname
+              operator: In
+              values:
+                - 192.168.32.31
+---
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: node2-blk3
+spec:
+  capacity:
+    storage: 370Gi
+  volumeMode: Block
+  accessModes:
+    - ReadWriteOnce
+  persistentVolumeReclaimPolicy: Delete
+  storageClassName: local-sc
+  local:
+    path: /dev/sdd1
+  nodeAffinity:
+    required:
+      nodeSelectorTerms:
+        - matchExpressions:
+            - key: kubernetes.io/hostname
+              operator: In
+              values:
+                - 192.168.32.31
+---
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: node2-blk4
+spec:
+  capacity:
+    storage: 370Gi
+  volumeMode: Block
+  accessModes:
+    - ReadWriteOnce
+  persistentVolumeReclaimPolicy: Delete
+  storageClassName: local-sc
+  local:
+    path: /dev/sda2
+  nodeAffinity:
+    required:
+      nodeSelectorTerms:
+        - matchExpressions:
+            - key: kubernetes.io/hostname
+              operator: In
+              values:
+                - 192.168.32.31
+---
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: node2-blk5
+spec:
+  capacity:
+    storage: 370Gi
+  volumeMode: Block
+  accessModes:
+    - ReadWriteOnce
+  persistentVolumeReclaimPolicy: Delete
+  storageClassName: local-sc
+  local:
+    path: /dev/sdc2
+  nodeAffinity:
+    required:
+      nodeSelectorTerms:
+        - matchExpressions:
+            - key: kubernetes.io/hostname
+              operator: In
+              values:
+                - 192.168.32.31
+---
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: node2-blk6
+spec:
+  capacity:
+    storage: 370Gi
+  volumeMode: Block
+  accessModes:
+    - ReadWriteOnce
+  persistentVolumeReclaimPolicy: Delete
+  storageClassName: local-sc
+  local:
+    path: /dev/sdd2
+  nodeAffinity:
+    required:
+      nodeSelectorTerms:
+        - matchExpressions:
+            - key: kubernetes.io/hostname
+              operator: In
+              values:
+                - 192.168.32.31

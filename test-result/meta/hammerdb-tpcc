@@ -1,0 +1,295 @@
+Database set to MySQL
+
+hammerdb>dbset bm tpc-c
+Benchmark set to TPC-C for MySQL
+
+hammerdb>diset connection mysql_host 10.199.1.234
+Changed connection:mysql_host from 127.0.0.1 to 10.199.1.234 for MySQL
+
+hammerdb>
+Changed tpcc:mysql_pass from mysql to password for MySQL
+
+
+Clearing Script, reload script to activate new setting
+Script cleared
+Changed tpcc:mysql_driver from test to timed for MySQL
+
+
+Changed tpcc:mysql_rampup from 2 to 0 for MySQL
+
+
+Changed tpcc:mysql_duration from 5 to 1 for MySQL
+
+hammerdb>buildschema
+Script cleared
+Building 1 Warehouses(s) with 1 Virtual User
+Ready to create a 1 Warehouse MySQL TPC-C schema
+in host 10.199.1.234:3306 under user ROOT in database TPCC with storage engine INNODB?
+Enter yes or no: replied yes
+Vuser 1 created - WAIT IDLE
+RUNNING - TPC-C creation
+Vuser 1:RUNNING
+Vuser 1:CREATING TPCC SCHEMA
+Vuser 1:CREATING DATABASE tpcc
+Vuser 1:CREATING TPCC TABLES
+
+Vuser 1:Loading Item
+Vuser 1:Loading Items - 50000
+Vuser 1:Loading Items - 100000
+Vuser 1:Item done
+Vuser 1:Start:Fri Dec 25 06:03:55 UTC 2020
+Vuser 1:Loading Warehouse
+Vuser 1:Loading Stock Wid=1
+Vuser 1:Loading Stock - 20000
+Vuser 1:Loading Stock - 40000
+Vuser 1:Loading Stock - 60000
+Vuser 1:Loading Stock - 80000
+Vuser 1:Loading Stock - 100000
+Vuser 1:Stock done
+Vuser 1:Loading District
+Vuser 1:District done
+Vuser 1:Loading Customer for DID=1 WID=1
+Vuser 1:Customer Done
+Vuser 1:Loading Customer for DID=2 WID=1
+Vuser 1:Customer Done
+Vuser 1:Loading Customer for DID=3 WID=1
+Vuser 1:Customer Done
+Vuser 1:Loading Customer for DID=4 WID=1
+Vuser 1:Customer Done
+Vuser 1:Loading Customer for DID=5 WID=1
+Vuser 1:Customer Done
+Vuser 1:Loading Customer for DID=6 WID=1
+Vuser 1:Customer Done
+Vuser 1:Loading Customer for DID=7 WID=1
+Vuser 1:Customer Done
+Vuser 1:Loading Customer for DID=8 WID=1
+Vuser 1:Customer Done
+Vuser 1:Loading Customer for DID=9 WID=1
+Vuser 1:Customer Done
+Vuser 1:Loading Customer for DID=10 WID=1
+Vuser 1:Customer Done
+Vuser 1:Loading Orders for D=1 W=1
+Vuser 1:...1000
+Vuser 1:...2000
+Vuser 1:...3000
+Vuser 1:Orders Done
+Vuser 1:Loading Orders for D=2 W=1
+Vuser 1:...1000
+Vuser 1:...2000
+Vuser 1:...3000
+Vuser 1:Orders Done
+Vuser 1:Loading Orders for D=3 W=1
+Vuser 1:...1000
+Vuser 1:...2000
+Vuser 1:...3000
+Vuser 1:Orders Done
+Vuser 1:Loading Orders for D=4 W=1
+Vuser 1:...1000
+Vuser 1:...2000
+Vuser 1:...3000
+Vuser 1:Orders Done
+Vuser 1:Loading Orders for D=5 W=1
+Vuser 1:...1000
+Vuser 1:...2000
+Vuser 1:...3000
+Vuser 1:Orders Done
+Vuser 1:Loading Orders for D=6 W=1
+Vuser 1:...1000
+Vuser 1:...2000
+Vuser 1:...3000
+Vuser 1:Orders Done
+Vuser 1:Loading Orders for D=7 W=1
+Vuser 1:...1000
+Vuser 1:...2000
+Vuser 1:...3000
+Vuser 1:Orders Done
+Vuser 1:Loading Orders for D=8 W=1
+Vuser 1:...1000
+Vuser 1:...2000
+Vuser 1:...3000
+Vuser 1:Orders Done
+Vuser 1:Loading Orders for D=9 W=1
+Vuser 1:...1000
+Vuser 1:...2000
+Vuser 1:...3000
+Vuser 1:Orders Done
+Vuser 1:Loading Orders for D=10 W=1
+Vuser 1:...1000
+Vuser 1:...2000
+Vuser 1:...3000
+Vuser 1:Orders Done
+Vuser 1:End:Fri Dec 25 06:05:00 UTC 2020
+Vuser 1:CREATING TPCC STORED PROCEDURES
+Vuser 1:GATHERING SCHEMA STATISTICS
+Vuser 1:TPCC SCHEMA COMPLETE
+Vuser 1:FINISHED SUCCESS
+ALL VIRTUAL USERS COMPLETE
+                          TPC-C Driver Script
+hammerdb>loadscript
+TPC-C Driver Script
+Script loaded, Type "print script" to view
+
+hammerdb>vudestroy
+Destroying Virtual Users
+Virtual Users Destroyed
+vudestroy success
+
+hammerdb>vuset vu 1
+
+hammerdb>vucreate
+Vuser 1 created MONITOR - WAIT IDLE
+Vuser 2 created - WAIT IDLE
+2 Virtual Users Created with Monitor VU
+
+hammerdb>vurun
+RUNNING - MySQL TPC-C Timed
+Vuser 1:RUNNING
+Vuser 1:Beginning rampup time of 0 minutes
+Vuser 1:Rampup complete, Taking start Transaction Count.
+Vuser 1:Timing test period of 1 in minutes
+Vuser 2:RUNNING
+Vuser 2:Processing 1000000 transactions with output suppressed...
+
+Vuser 1:1 ...,
+Vuser 1:Test complete, Taking end Transaction Count.
+Vuser 1:1 Active Virtual Users configured
+Vuser 1:TEST RESULT : System achieved 3062 MySQL TPM at 940 NOPM
+Vuser 1:FINISHED SUCCESS
+Vuser 2:FINISHED SUCCESS
+ALL VIRTUAL USERS COMPLETE
+                          TPC-C Driver Script
+hammerdb>vudestroy 
+Destroying Virtual Users
+Virtual Users Destroyed
+vudestroy success
+
+hammerdb>vuset vu 2
+
+hammerdb>vucreate
+Vuser 1 created MONITOR - WAIT IDLE
+Vuser 2 created - WAIT IDLE
+Vuser 3 created - WAIT IDLE
+3 Virtual Users Created with Monitor VU
+
+hammerdb>vurun
+RUNNING - MySQL TPC-C Timed
+Vuser 1:RUNNING
+Vuser 1:Beginning rampup time of 0 minutes
+Vuser 1:Rampup complete, Taking start Transaction Count.
+Vuser 1:Timing test period of 1 in minutes
+Vuser 2:RUNNING
+Vuser 2:Processing 1000000 transactions with output suppressed...
+Vuser 3:RUNNING
+Vuser 3:Processing 1000000 transactions with output suppressed...
+
+Vuser 1:1 ...,
+Vuser 1:Test complete, Taking end Transaction Count.
+Vuser 1:2 Active Virtual Users configured
+Vuser 1:TEST RESULT : System achieved 5479 MySQL TPM at 1848 NOPM
+Vuser 1:FINISHED SUCCESS
+Vuser 2:FINISHED SUCCESS
+Vuser 3:FINISHED SUCCESS
+ALL VIRTUAL USERS COMPLETE
+                          TPC-C Driver Script
+hammerdb>vudestory
+Error: invalid command name "vudestory"
+
+hammerdb>vudestroy
+Destroying Virtual Users
+Virtual Users Destroyed
+vudestroy success
+
+hammerdb>vuset vu 4
+
+hammerdb>vucreate
+Vuser 1 created MONITOR - WAIT IDLE
+Vuser 2 created - WAIT IDLE
+Vuser 3 created - WAIT IDLE
+Vuser 4 created - WAIT IDLE
+Vuser 5 created - WAIT IDLE
+5 Virtual Users Created with Monitor VU
+
+hammerdb>vurun
+RUNNING - MySQL TPC-C Timed
+Vuser 1:RUNNING
+Vuser 1:Beginning rampup time of 0 minutes
+Vuser 1:Rampup complete, Taking start Transaction Count.
+Vuser 1:Timing test period of 1 in minutes
+Vuser 2:RUNNING
+Vuser 2:Processing 1000000 transactions with output suppressed...
+Vuser 3:RUNNING
+Vuser 3:Processing 1000000 transactions with output suppressed...
+Vuser 4:RUNNING
+Vuser 4:Processing 1000000 transactions with output suppressed...
+Vuser 5:RUNNING
+Vuser 5:Processing 1000000 transactions with output suppressed...
+
+Vuser 1:1 ...,
+Vuser 1:Test complete, Taking end Transaction Count.
+Vuser 1:4 Active Virtual Users configured
+Vuser 1:TEST RESULT : System achieved 7773 MySQL TPM at 2701 NOPM
+Vuser 1:FINISHED SUCCESS
+Vuser 3:FINISHED SUCCESS
+Vuser 5:FINISHED SUCCESS
+Vuser 2:FINISHED SUCCESS
+Vuser 4:FINISHED SUCCESS
+ALL VIRTUAL USERS COMPLETE
+                          TPC-C Driver Script
+hammerdb>vudestroy
+Destroying Virtual Users
+Virtual Users Destroyed
+vudestroy success
+
+hammerdb>vuset vu 8
+
+hammerdb>vucreate
+Vuser 1 created MONITOR - WAIT IDLE
+Vuser 2 created - WAIT IDLE
+Vuser 3 created - WAIT IDLE
+Vuser 4 created - WAIT IDLE
+Vuser 5 created - WAIT IDLE
+Vuser 6 created - WAIT IDLE
+Vuser 7 created - WAIT IDLE
+Vuser 8 created - WAIT IDLE
+Vuser 9 created - WAIT IDLE
+9 Virtual Users Created with Monitor VU
+
+hammerdb>vurun
+RUNNING - MySQL TPC-C Timed
+Vuser 1:RUNNING
+Vuser 1:Beginning rampup time of 0 minutes
+Vuser 1:Rampup complete, Taking start Transaction Count.
+Vuser 1:Timing test period of 1 in minutes
+Vuser 2:RUNNING
+Vuser 2:Processing 1000000 transactions with output suppressed...
+Vuser 3:RUNNING
+Vuser 3:Processing 1000000 transactions with output suppressed...
+Vuser 4:RUNNING
+Vuser 4:Processing 1000000 transactions with output suppressed...
+Vuser 5:RUNNING
+Vuser 5:Processing 1000000 transactions with output suppressed...
+Vuser 6:RUNNING
+Vuser 6:Processing 1000000 transactions with output suppressed...
+Vuser 7:RUNNING
+Vuser 7:Processing 1000000 transactions with output suppressed...
+Vuser 8:RUNNING
+Vuser 8:Processing 1000000 transactions with output suppressed...
+Vuser 9:RUNNING
+Vuser 9:Processing 1000000 transactions with output suppressed...
+
+Vuser 1:1 ...,
+Vuser 1:Test complete, Taking end Transaction Count.
+Vuser 1:8 Active Virtual Users configured
+Vuser 1:TEST RESULT : System achieved 8535 MySQL TPM at 2844 NOPM
+Vuser 1:FINISHED SUCCESS
+Vuser 5:FINISHED SUCCESS
+Vuser 8:FINISHED SUCCESS
+Vuser 2:FINISHED SUCCESS
+Vuser 7:FINISHED SUCCESS
+Vuser 3:FINISHED SUCCESS
+Vuser 9:FINISHED SUCCESS
+Vuser 6:FINISHED SUCCESS
+Vuser 4:FINISHED SUCCESS
+ALL VIRTUAL USERS COMPLETE
+                          TPC-C Driver Script
+

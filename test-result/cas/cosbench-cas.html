@@ -1,0 +1,491 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd"> <html><!--
+ Page saved with SingleFile 
+ url: http://192.168.32.30:19088/controller/workload.html?id=w4&perfDetails=True 
+ saved date: Fri Dec 25 2020 17:25:05 GMT+0800 (中国标准时间)
+--><meta charset=utf-8>
+<style>html{color:#555;font-size:16px;font-family:verdana,tahoma,sans-serif;font-weight:normal}h2{padding:0px;margin:18px 0px;font-size:24px}h3{padding:0px;margin:15px 0px;color:#086DB6;font-size:22px;font-weight:normal}a{color:#086DB6}a:visited{color:#555}.content{width:1100px;margin-left:auto;margin-right:auto}#header{color:white;background:transparent url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAABNCAYAAABnjw6eAAAAVElEQVQY05XOQQ6AQAgDwAFi4mt8jZ/zp97Wm2bNqpEDAVrasm4tIQkpzok/6/VLiuh4o1tcaO979+hVPih/0Mf0byqwJPbCXJgKWVDOaq31wcftAEN6BuYz1P1xAAAAAElFTkSuQmCC) repeat-x left top;height:65px;position:fixed;z-index:2;top:0px;left:0px;width:100%}#title{float:left;font-size:28px;font-variant:small-caps;position:relative;top:12px}#title .codename{font-size:34px;font-weight:bold}#version{float:right;text-align:right;position:relative;top:15px}#footer{color:white;background:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAAoCAYAAAA/tpB3AAAAQElEQVQI15XLyQmAABADwDGIgnZnd1YbHx4g+PGzkE1GW8F5IMEYTMEcLMEaLIZt7yVeNjzxq+h78vVrpb/EzQ5r6xtPGjqfeQAAAABJRU5ErkJggg==) repeat-x left bottom;height:35px;position:fixed;bottom:0px;left:0px;width:100%}#footer .content{font-size:14px;margin-top:10px}.top{height:47px}.bottom{height:30px}.info-table{width:100%;text-align:center;border-bottom:solid 1px #E1E1E1;border-collapse:collapse}.info-table th{padding:2px;color:#FFFFFF;background-color:#555555}.info-table th:hover{background-color:#333333}.info-table th.id{color:#555555;background:#BBBBAA}.info-table th.id:hover{background-color:#E1E1E1}.info-table td{padding:2px;border-top:solid 1px #E1E1E1;background-color:#FFFFFF}.info-table tr:hover td{background-color:#CCD9E9}.Stages-table{width:100%;text-align:center;border-bottom:solid 1px #E1E1E1;border-collapse:collapse}.Stages-table th{padding:2px;color:#FFFFFF;background-color:#555555}.Stages-table th:hover{background-color:#333333}.Stages-table th.id{color:#555555;background:#BBBBAA}.Stages-table th.id:hover{background-color:#E1E1E1}.Stages-table td{padding:2px;border-top:solid 1px #E1E1E1;background-color:#FFFFFF}.Stages-table tr.high-light td{background:#F4F4F4}.Stages-table tr:hover td{background-color:#CCD9E9}.warn{color:orange}.label{margin-right:10px}.grid{margin-right:10px}.state{padding:2px;color:#FFFFFF;border-radius:3px;font-size:12px}.workload-state-finished,.stage-state-completed{background-color:#18A9FF}</style>
+<title>Workload Details</title>
+<link type=image/x-icon rel="shortcut icon" href=data:undefined;base64,><style>.sf-hidden{display:none!important}</style><link rel=canonical href="http://192.168.32.30:19088/controller/workload.html?id=w4&amp;perfDetails=True"></head>
+<body>
+<div id=header>
+<div class=content>
+ <div id=title><span class=codename>COSBench</span> - <span>Controller Web Console</span></div>
+ <div id=version><div>time: Fri Dec 25 09:25:00 UTC 2020 </div><div>version: 0.4.2.20170725 </div></div>
+</div> 
+</div> <div id=main>
+<div class=top><br></div>
+<div class=content>
+ <p>
+ <a href=http://192.168.32.30:19088/controller/index.html>index</a> -&gt;
+ <span>workload</span>
+ </p>
+ <h2>Workload</h2>
+ <h3>Basic Info</h3>
+ <p>
+ <span class=grid>
+ <span class=label><strong>ID</strong>:</span>
+ w4
+ </span>
+ <span class=grid>
+ <span class=label><strong>Name</strong>:</span>
+ s3-simple
+ </span>
+ <span class=grid>
+ <span class=label><strong>Current State</strong>:</span>
+ <span class="workload-state-finished state">finished</span>
+ </span>
+ </p>
+ <p>
+ <span class=grid>
+ <span class=label><strong>Submitted At</strong>:</span>
+ 2020-12-25 9:12:48
+ </span>
+ <span class=grid>
+ <span class=label><strong>Started At</strong>:</span>
+ 2020-12-25 9:12:48
+ 
+ </span>
+ <span class=grid>
+ <span class=label><strong>Stopped At</strong>:</span>
+ 2020-12-25 9:13:57
+ 
+ </span>
+ </p>
+ <p><a href="http://192.168.32.30:19088/controller/workload.html?id=w4&amp;showDetails=True">more info</a></p>
+ <h3>Final Result</h3>
+<h4>General Report</h4>
+<table class=info-table>
+ <tbody><tr>
+ <th class=id style=width:13%>Op-Type</th>
+ <th>Op-Count</th>
+ <th>Byte-Count</th>
+ <th>Avg-ResTime</th>
+ <th>Avg-ProcTime</th>
+ <th>Throughput</th>
+ <th>Bandwidth</th>
+ <th>Succ-Ratio</th>
+ </tr>
+ <tr>
+ <td>
+ op1:
+ init
+ -write
+ </td>
+ <td>
+ 0 ops
+ </td>
+ <td>
+ 0 B
+ </td>
+ <td>
+ N/A
+ </td>
+ <td>
+ N/A
+ </td>
+ <td>0 op/s</td>
+ <td>
+ 0 B/S
+ </td>
+ <td>
+ N/A
+ </td>
+ </tr>
+ <tr>
+ <td>
+ op1:
+ prepare
+ -write
+ </td>
+ <td>
+ 11 ops
+ </td>
+ <td>
+ 347 KB
+ </td>
+ <td>
+ 13 ms
+ </td>
+ <td>
+ 12.36 ms
+ </td>
+ <td>303.26 op/s</td>
+ <td>
+ 9.54 MB/S
+ </td>
+ <td>
+ 100%
+ </td>
+ </tr>
+ <tr>
+ <td>
+ op1:
+ read
+ 
+ </td>
+ <td>
+ 1.59 kops
+ </td>
+ <td>
+ 61.89 MB
+ </td>
+ <td>
+ 5.34 ms
+ </td>
+ <td>
+ 4.16 ms
+ </td>
+ <td>888.79 op/s</td>
+ <td>
+ 34.52 MB/S
+ </td>
+ <td>
+ 100%
+ </td>
+ </tr>
+ <tr>
+ <td>
+ op2:
+ write
+ 
+ </td>
+ <td>
+ 407 ops
+ </td>
+ <td>
+ 13.62 MB
+ </td>
+ <td>
+ 14.13 ms
+ </td>
+ <td>
+ 13.6 ms
+ </td>
+ <td>225.61 op/s</td>
+ <td>
+ 7.55 MB/S
+ </td>
+ <td>
+ 100%
+ </td>
+ </tr>
+ <tr>
+ <td>
+ op1:
+ cleanup
+ -delete
+ </td>
+ <td>
+ 11 ops
+ </td>
+ <td>
+ 0 B
+ </td>
+ <td>
+ 11.73 ms
+ </td>
+ <td>
+ 11.73 ms
+ </td>
+ <td>337.28 op/s</td>
+ <td>
+ 0 B/S
+ </td>
+ <td>
+ 100%
+ </td>
+ </tr>
+ <tr>
+ <td>
+ op1:
+ dispose
+ -delete
+ </td>
+ <td>
+ 0 ops
+ </td>
+ <td>
+ 0 B
+ </td>
+ <td>
+ N/A
+ </td>
+ <td>
+ N/A
+ </td>
+ <td>0 op/s</td>
+ <td>
+ 0 B/S
+ </td>
+ <td>
+ N/A
+ </td>
+ </tr>
+</table>
+<h4>ResTime (RT) Details</h4>
+<table class=info-table>
+ <tbody><tr>
+ <th class=id style=width:13%>Op-Type</th>
+ <th>60%-RT</th>
+ <th>80%-RT</th>
+ <th>90%-RT</th>
+ <th>95%-RT</th>
+ <th>99%-RT</th>
+ <th>100%-RT</th>
+ </tr>
+ <tr>
+ <td>init-write</td>
+ <td>
+ N/A
+ </td>
+ <td>
+ N/A
+ </td>
+ <td>
+ N/A
+ </td>
+ <td>
+ N/A
+ </td>
+ <td>
+ N/A
+ </td>
+ <td>
+ N/A
+ </td>
+ </tr>
+ <tr>
+ <td>prepare-write</td>
+ <td>
+ &lt; 20 ms
+ </td>
+ <td>
+ &lt; 20 ms
+ </td>
+ <td>
+ &lt; 20 ms
+ </td>
+ <td>
+ &lt; 20 ms
+ </td>
+ <td>
+ &lt; 20 ms
+ </td>
+ <td>
+ &lt; 20 ms
+ </td>
+ </tr>
+ <tr>
+ <td>read</td>
+ <td>
+ &lt; 10 ms
+ </td>
+ <td>
+ &lt; 10 ms
+ </td>
+ <td>
+ &lt; 10 ms
+ </td>
+ <td>
+ &lt; 10 ms
+ </td>
+ <td>
+ &lt; 10 ms
+ </td>
+ <td>
+ &lt; 30 ms
+ </td>
+ </tr>
+ <tr>
+ <td>write</td>
+ <td>
+ &lt; 20 ms
+ </td>
+ <td>
+ &lt; 20 ms
+ </td>
+ <td>
+ &lt; 20 ms
+ </td>
+ <td>
+ &lt; 20 ms
+ </td>
+ <td>
+ &lt; 30 ms
+ </td>
+ <td>
+ &lt; 30 ms
+ </td>
+ </tr>
+ <tr>
+ <td>cleanup-delete</td>
+ <td>
+ &lt; 20 ms
+ </td>
+ <td>
+ &lt; 20 ms
+ </td>
+ <td>
+ &lt; 20 ms
+ </td>
+ <td>
+ &lt; 20 ms
+ </td>
+ <td>
+ &lt; 20 ms
+ </td>
+ <td>
+ &lt; 20 ms
+ </td>
+ </tr>
+ <tr>
+ <td>dispose-delete</td>
+ <td>
+ N/A
+ </td>
+ <td>
+ N/A
+ </td>
+ <td>
+ N/A
+ </td>
+ <td>
+ N/A
+ </td>
+ <td>
+ N/A
+ </td>
+ <td>
+ N/A
+ </td>
+ </tr>
+</table>
+ <p><a href="http://192.168.32.30:19088/controller/workload.html?id=w4">hide peformance details</a></p>
+ <h3>Stages</h3>
+ 
+ <table class=Stages-table>
+ <tbody><tr>
+ <th class=id style=width:18%>Current Stage</th>
+ <th style=width:10%>Stages completed</th>
+ <th style=width:10%>Stages remaining</th>
+ <th>Start Time</th>
+ <th>End Time</th>
+ <th style=width:13%>Time Remaining</th>
+ </tr>
+ 
+ <tr class=high-light>
+ <td><br><strong></strong><br></td>
+ <td><br><strong></strong><br></td>
+ <td><br><strong></strong><br></td>
+ <td><br><strong></strong><br></td>
+ <td><br><strong></strong><br></td>
+ <td><br><strong></strong><br></td>
+ 
+ </table>
+ <table class=info-table>
+ <tbody><tr>
+ <th class=id>ID</th>
+ <th>Name</th>
+ <th>Works</th>
+ <th>Workers</th>
+ <th>Op-Info</th>
+ <th>State</th>
+ <th>Link</th>
+ </tr>
+ <tr>
+ <td>w4-s1-init</td>
+ <td>init</td>
+ <td>1 wks</td>
+ <td>1 wkrs</td>
+ <td>
+ init
+ </td>
+ <td><span class="stage-state-completed state">completed</span></td>
+ <td><a href="http://192.168.32.30:19088/controller/stage.html?wid=w4&amp;sid=s1-init">view details</a></td>
+ </tr>
+ <tr>
+ <td>w4-s2-prepare</td>
+ <td>prepare</td>
+ <td>1 wks</td>
+ <td>4 wkrs</td>
+ <td>
+ prepare
+ </td>
+ <td><span class="stage-state-completed state">completed</span></td>
+ <td><a href="http://192.168.32.30:19088/controller/stage.html?wid=w4&amp;sid=s2-prepare">view details</a></td>
+ </tr>
+ <tr>
+ <td>w4-s3-main</td>
+ <td>main</td>
+ <td>1 wks</td>
+ <td>8 wkrs</td>
+ <td>
+ read,
+ write
+ </td>
+ <td><span class="stage-state-completed state">completed</span></td>
+ <td><a href="http://192.168.32.30:19088/controller/stage.html?wid=w4&amp;sid=s3-main">view details</a></td>
+ </tr>
+ <tr>
+ <td>w4-s4-cleanup</td>
+ <td>cleanup</td>
+ <td>1 wks</td>
+ <td>4 wkrs</td>
+ <td>
+ cleanup
+ </td>
+ <td><span class="stage-state-completed state">completed</span></td>
+ <td><a href="http://192.168.32.30:19088/controller/stage.html?wid=w4&amp;sid=s4-cleanup">view details</a></td>
+ </tr>
+ <tr>
+ <td>w4-s5-dispose</td>
+ <td>dispose</td>
+ <td>1 wks</td>
+ <td>1 wkrs</td>
+ <td>
+ dispose
+ </td>
+ <td><span class="stage-state-completed state">completed</span></td>
+ <td><a href="http://192.168.32.30:19088/controller/stage.html?wid=w4&amp;sid=s5-dispose">view details</a></td>
+ </tr>
+ </table>
+ <p class=warn>There are 5 stages in this workload.</p>
+ <p><a href="http://192.168.32.30:19088/controller/workload.html?id=w4&amp;showErrorStatistics=True">show error statistics details</a></p>
+ 
+ <h4>Performance Graph
+ <select id=cstage>
+ <option value=close select=selected selected></option>
+ <option value=s1-init>s1-init</option>
+ <option value=s2-prepare>s2-prepare</option>
+ <option value=s3-main>s3-main</option>
+ <option value=s4-cleanup>s4-cleanup</option>
+ <option value=s5-dispose>s5-dispose</option>
+ </select>
+ </h4>
+ <div id=fchart style=display:none>
+ <div style="width:1080px;height:810px;display:block;margin:auto;margin-top:20px;border:solid 1px #ccc" class=sf-hidden>
+ 
+ 
+ 
+ 
+ </div>
+ </div>
+ <h3>Actions</h3>
+ <p>
+ <a class=label href="http://192.168.32.30:19088/controller/download-log.do?id=w4">download-log</a>
+ <a class=label href="http://192.168.32.30:19088/controller/download-config.do?id=w4">download-config</a>
+ </p> 
+ <p><a href=http://192.168.32.30:19088/controller/index.html>go back to index</a></p>
+</div> 
+<div class=bottom><br></div>
+</div> 
+<div id=footer>
+<div class=content>
+ <div>
+ <center>
+ <span>Intel Corporation</span>
+ </center>
+ </div>
+</div> 
+</div> 
+<div style="position:fixed;pointer-events:none;width:100%;height:100%;left:0px;top:0px;background:rgb(204,232,207) none repeat scroll 0% 0%;opacity:0.2;z-index:999999999;display:block"></div>

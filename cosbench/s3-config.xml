@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<workload name="s3-simple" description="simple benchmark for s3">
+  <auth type="none" config="username=cosbench;password=AQCaVMdfA/ZUIBAAsmBR3jkUEU6LBYCMIyiFZw==;auth_url=http://192.168.32.30:30928"/>
+  <storage type="s3" config="accesskey=8HS3G7MR99FYMZSG2UHO;secretkey=SqgLTCYFj0SEhgMEEODQSuGQl3EXseNGwREF13q9;endpoint=http://192.168.32.30:30928;timeout=600000"/>
+
+  <workflow>
+
+    <workstage name="init">
+      <work type="init" workers="1" config="cprefix=ak;containers=r(1,1)" />
+    </workstage>
+
+    <workstage name="prepare">
+      <work type="prepare" workers="4" config="cprefix=ak;containers=r(1,1);objects=r(1,11);sizes=u(1,64)KB" />
+    </workstage>
+
+    <workstage name="main">
+      <work name="main" workers="8" totalOps="2000">
+        <operation type="read" ratio="80" config="cprefix=ak;containers=u(1,1);objects=u(1,5)" />
+        <operation type="write" ratio="20" config="cprefix=ak;containers=u(1,1);objects=u(6,11);sizes=u(1,64)KB" />
+      </work>
+    </workstage>
+
+    <workstage name="cleanup" closuredelay="30">
+      <work type="cleanup" workers="4" config="cprefix=ak;containers=r(1,1);objects=r(1,11)" />
+    </workstage>
+
+    <workstage name="dispose" closuredelay="0">
+      <work type="dispose" workers="1" config="cprefix=ak;containers=r(1,1)"/>
+    </workstage>
+
+  </workflow>
+
+</workload>

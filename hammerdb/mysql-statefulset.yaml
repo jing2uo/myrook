@@ -1,0 +1,101 @@
+apiVersion: apps/v1
+kind: StatefulSet
+metadata:
+  name: mysql
+spec:
+  serviceName: "mysql"
+  replicas: 1
+  selector:
+    matchLabels:
+      app: mysql
+  template:
+    metadata:
+      labels:
+        app: mysql
+    spec:
+      affinity:
+        podAntiAffinity:
+          preferredDuringSchedulingIgnoredDuringExecution:
+          - weight: 100
+            podAffinityTerm:
+              labelSelector:
+                matchExpressions:
+                - key: app
+                  operator: In
+                  values:
+                  - mysql
+              topologyKey: kubernetes.io/hostname
+      containers:
+      - name: mysql
+        image: 192.168.32.30:60080/guojing/mysql:latest
+        imagePullPolicy: IfNotPresent
+        # TODO: Change these to appropriate values for the hardware that you're running. You can see
+        # the amount of allocatable resources on each of your Kubernetes nodes by running:
+        #   kubectl describe nodes
+        # resources:
+        #   requests:
+        #     cpu: "16"
+        #     memory: "8Gi"
+        #   limits:
+            # NOTE: Unless you have enabled the non-default Static CPU Management Policy
+            # and are using an integer number of CPUs, we don't recommend setting a CPU limit.
+            # See:
+            #   https://kubernetes.io/docs/tasks/administer-cluster/cpu-management-policies/#static-policy
+            #   https://github.com/kubernetes/kubernetes/issues/51135
+            #   cpu: "16"
+            #   memory: "8Gi" 
+        #ports:
+        #- containerPort: 26257
+        #  name: grpc
+        #- containerPort: 8080
+        #  name: http
+        #livenessProbe:
+        #  httpGet:
+        #    path: "/health"
+        #    port: http
+        #  initialDelaySeconds: 30
+        #  periodSeconds: 5
+        #readinessProbe:
+        #  httpGet:
+        #    path: "/health?ready=1"
+        #    port: http
+        #  initialDelaySeconds: 10
+        #  periodSeconds: 5
+        #  failureThreshold: 2
+        volumeMounts:
+        - name: mysqlvol
+          mountPath: /var/lib/mysql
+        #env:
+        #- name: HAMMERDB_CHANNEL
+        #  value: kubernetes-insecure
+        env:
+          - name: MYSQL_ROOT_PASSWORD
+            value: password
+       # command:
+       #   - "/bin/sleep"
+       #   - "36d"
+       #   #- "/bin/bash"
+          #- "-ecx"
+          # The use of qualified `hostname -f` is crucial:
+          # Other nodes aren't able to look up the unqualified hostname.
+          # - "exec /hammerdb/hammerdbcli"
+      # No pre-stop hook is required, a SIGTERM plus some time is all that's
+      # needed for graceful shutdown of a node.
+      #terminationGracePeriodSeconds: 60
+      volumes:
+      - name: mysqlvol
+        persistentVolumeClaim:
+          claimName: mysqlvol
+  podManagementPolicy: Parallel
+  updateStrategy:
+    type: RollingUpdate
+  volumeClaimTemplates:
+  - metadata:
+      name: mysqlvol
+    spec:
+      accessModes:
+        - "ReadWriteOnce"
+      storageClassName: rook-ceph-block
+      resources:
+        requests:
+          storage: 200Gi

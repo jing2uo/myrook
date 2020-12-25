@@ -1,0 +1,293 @@
+root@hammerdb-0:/hammerdb# ./hammerdbcli 
+HammerDB CLI v3.3
+Copyright (C) 2003-2019 Steve Shaw
+Type "help" for a list of commands
+The xml is well-formed, applying configuration
+hammerdb>
+Database set to MySQL
+
+hammerdb>dbset bm tpc-h
+Benchmark set to TPC-H for MySQL
+
+hammerdb>diset connection mysql_host 10.199.1.144
+Changed connection:mysql_host from 127.0.0.1 to 10.199.1.144 for MySQL
+
+hammerdb>diset tpch mysql_tpch_pass password
+Changed tpch:mysql_tpch_pass from mysql to password for MySQL
+
+hammerdb>
+Script cleared
+Building Scale Factor 1 with 1 Virtual Users, 1 active + 1 Monitor VU(dict value mysql_num_tpch_threads is set to 1)
+Ready to create a Scale Factor 1 TPC-H schema
+ in host 10.199.1.144:3306 under user ROOT in database TPCH with storage engine MYISAM?
+Enter yes or no: replied yes
+Vuser 1 created - WAIT IDLE
+RUNNING - MySQL TPC-H creation
+Vuser 1:RUNNING
+Vuser 1:CREATING ROOT SCHEMA
+Vuser 1:CREATING DATABASE tpch
+Vuser 1:CREATING TPCH TABLES
+Vuser 1:Loading REGION...
+Vuser 1:Loading REGION COMPLETE
+Vuser 1:Loading NATION...
+
+Vuser 1:Loading NATION COMPLETE
+Vuser 1:Start:Thu Dec 24 03:55:57 UTC 2020
+Vuser 1:Loading SUPPLIER...
+Vuser 1:Loading SUPPLIER...10000
+Vuser 1:SUPPLIER Done Rows 1..10000
+Vuser 1:Loading CUSTOMER...
+Vuser 1:Loading CUSTOMER...10000
+Vuser 1:Loading CUSTOMER...20000
+Vuser 1:Loading CUSTOMER...30000
+Vuser 1:Loading CUSTOMER...40000
+Vuser 1:Loading CUSTOMER...50000
+Vuser 1:Loading CUSTOMER...60000
+Vuser 1:Loading CUSTOMER...70000
+Vuser 1:Loading CUSTOMER...80000
+Vuser 1:Loading CUSTOMER...90000
+Vuser 1:Loading CUSTOMER...100000
+Vuser 1:Loading CUSTOMER...110000
+Vuser 1:Loading CUSTOMER...120000
+Vuser 1:Loading CUSTOMER...130000
+Vuser 1:Loading CUSTOMER...140000
+Vuser 1:Loading CUSTOMER...150000
+Vuser 1:Customer Done Rows 1..150000
+Vuser 1:Loading PART and PARTSUPP...
+Vuser 1:Loading PART/PARTSUPP...10000
+Vuser 1:Loading PART/PARTSUPP...20000
+Vuser 1:Loading PART/PARTSUPP...30000
+Vuser 1:Loading PART/PARTSUPP...40000
+Vuser 1:Loading PART/PARTSUPP...50000
+Vuser 1:Loading PART/PARTSUPP...60000
+Vuser 1:Loading PART/PARTSUPP...70000
+Vuser 1:Loading PART/PARTSUPP...80000
+Vuser 1:Loading PART/PARTSUPP...90000
+Vuser 1:Loading PART/PARTSUPP...100000
+Vuser 1:Loading PART/PARTSUPP...110000
+Vuser 1:Loading PART/PARTSUPP...120000
+Vuser 1:Loading PART/PARTSUPP...130000
+Vuser 1:Loading PART/PARTSUPP...140000
+Vuser 1:Loading PART/PARTSUPP...150000
+Vuser 1:Loading PART/PARTSUPP...160000
+Vuser 1:Loading PART/PARTSUPP...170000
+Vuser 1:Loading PART/PARTSUPP...180000
+Vuser 1:Loading PART/PARTSUPP...190000
+Vuser 1:Loading PART/PARTSUPP...200000
+Vuser 1:PART and PARTSUPP Done Rows 1..200000
+Vuser 1:Loading ORDERS and LINEITEM...
+Vuser 1:Loading ORDERS/LINEITEM...10000
+Vuser 1:Loading ORDERS/LINEITEM...20000
+Vuser 1:Loading ORDERS/LINEITEM...30000
+Vuser 1:Loading ORDERS/LINEITEM...40000
+Vuser 1:Loading ORDERS/LINEITEM...50000
+Vuser 1:Loading ORDERS/LINEITEM...60000
+Vuser 1:Loading ORDERS/LINEITEM...70000
+Vuser 1:Loading ORDERS/LINEITEM...80000
+Vuser 1:Loading ORDERS/LINEITEM...90000
+Vuser 1:Loading ORDERS/LINEITEM...100000
+Vuser 1:Loading ORDERS/LINEITEM...110000
+Vuser 1:Loading ORDERS/LINEITEM...120000
+Vuser 1:Loading ORDERS/LINEITEM...130000
+Vuser 1:Loading ORDERS/LINEITEM...140000
+Vuser 1:Loading ORDERS/LINEITEM...150000
+Vuser 1:Loading ORDERS/LINEITEM...160000
+Vuser 1:Loading ORDERS/LINEITEM...170000
+Vuser 1:Loading ORDERS/LINEITEM...180000
+Vuser 1:Loading ORDERS/LINEITEM...190000
+Vuser 1:Loading ORDERS/LINEITEM...200000
+Vuser 1:Loading ORDERS/LINEITEM...210000
+Vuser 1:Loading ORDERS/LINEITEM...220000
+Vuser 1:Loading ORDERS/LINEITEM...230000
+Vuser 1:Loading ORDERS/LINEITEM...240000
+Vuser 1:Loading ORDERS/LINEITEM...250000
+Vuser 1:Loading ORDERS/LINEITEM...260000
+Vuser 1:Loading ORDERS/LINEITEM...270000
+Vuser 1:Loading ORDERS/LINEITEM...280000
+Vuser 1:Loading ORDERS/LINEITEM...290000
+Vuser 1:Loading ORDERS/LINEITEM...300000
+Vuser 1:Loading ORDERS/LINEITEM...310000
+Vuser 1:Loading ORDERS/LINEITEM...320000
+Vuser 1:Loading ORDERS/LINEITEM...330000
+Vuser 1:Loading ORDERS/LINEITEM...340000
+Vuser 1:Loading ORDERS/LINEITEM...350000
+Vuser 1:Loading ORDERS/LINEITEM...360000
+Vuser 1:Loading ORDERS/LINEITEM...370000
+Vuser 1:Loading ORDERS/LINEITEM...380000
+Vuser 1:Loading ORDERS/LINEITEM...390000
+Vuser 1:Loading ORDERS/LINEITEM...400000
+Vuser 1:Loading ORDERS/LINEITEM...410000
+Vuser 1:Loading ORDERS/LINEITEM...420000
+Vuser 1:Loading ORDERS/LINEITEM...430000
+Vuser 1:Loading ORDERS/LINEITEM...440000
+Vuser 1:Loading ORDERS/LINEITEM...450000
+Vuser 1:Loading ORDERS/LINEITEM...460000
+Vuser 1:Loading ORDERS/LINEITEM...470000
+Vuser 1:Loading ORDERS/LINEITEM...480000
+Vuser 1:Loading ORDERS/LINEITEM...490000
+Vuser 1:Loading ORDERS/LINEITEM...500000
+Vuser 1:Loading ORDERS/LINEITEM...510000
+Vuser 1:Loading ORDERS/LINEITEM...520000
+Vuser 1:Loading ORDERS/LINEITEM...530000
+Vuser 1:Loading ORDERS/LINEITEM...540000
+Vuser 1:Loading ORDERS/LINEITEM...550000
+Vuser 1:Loading ORDERS/LINEITEM...560000
+Vuser 1:Loading ORDERS/LINEITEM...570000
+Vuser 1:Loading ORDERS/LINEITEM...580000
+Vuser 1:Loading ORDERS/LINEITEM...590000
+Vuser 1:Loading ORDERS/LINEITEM...600000
+Vuser 1:Loading ORDERS/LINEITEM...610000
+Vuser 1:Loading ORDERS/LINEITEM...620000
+Vuser 1:Loading ORDERS/LINEITEM...630000
+Vuser 1:Loading ORDERS/LINEITEM...640000
+Vuser 1:Loading ORDERS/LINEITEM...650000
+Vuser 1:Loading ORDERS/LINEITEM...660000
+Vuser 1:Loading ORDERS/LINEITEM...670000
+Vuser 1:Loading ORDERS/LINEITEM...680000
+Vuser 1:Loading ORDERS/LINEITEM...690000
+Vuser 1:Loading ORDERS/LINEITEM...700000
+Vuser 1:Loading ORDERS/LINEITEM...710000
+Vuser 1:Loading ORDERS/LINEITEM...720000
+Vuser 1:Loading ORDERS/LINEITEM...730000
+Vuser 1:Loading ORDERS/LINEITEM...740000
+Vuser 1:Loading ORDERS/LINEITEM...750000
+Vuser 1:Loading ORDERS/LINEITEM...760000
+Vuser 1:Loading ORDERS/LINEITEM...770000
+Vuser 1:Loading ORDERS/LINEITEM...780000
+Vuser 1:Loading ORDERS/LINEITEM...790000
+Vuser 1:Loading ORDERS/LINEITEM...800000
+Vuser 1:Loading ORDERS/LINEITEM...810000
+Vuser 1:Loading ORDERS/LINEITEM...820000
+Vuser 1:Loading ORDERS/LINEITEM...830000
+Vuser 1:Loading ORDERS/LINEITEM...840000
+Vuser 1:Loading ORDERS/LINEITEM...850000
+Vuser 1:Loading ORDERS/LINEITEM...860000
+Vuser 1:Loading ORDERS/LINEITEM...870000
+Vuser 1:Loading ORDERS/LINEITEM...880000
+Vuser 1:Loading ORDERS/LINEITEM...890000
+Vuser 1:Loading ORDERS/LINEITEM...900000
+Vuser 1:Loading ORDERS/LINEITEM...910000
+Vuser 1:Loading ORDERS/LINEITEM...920000
+Vuser 1:Loading ORDERS/LINEITEM...930000
+Vuser 1:Loading ORDERS/LINEITEM...940000
+Vuser 1:Loading ORDERS/LINEITEM...950000
+Vuser 1:Loading ORDERS/LINEITEM...960000
+Vuser 1:Loading ORDERS/LINEITEM...970000
+Vuser 1:Loading ORDERS/LINEITEM...980000
+Vuser 1:Loading ORDERS/LINEITEM...990000
+Vuser 1:Loading ORDERS/LINEITEM...1000000
+Vuser 1:Loading ORDERS/LINEITEM...1010000
+Vuser 1:Loading ORDERS/LINEITEM...1020000
+Vuser 1:Loading ORDERS/LINEITEM...1030000
+Vuser 1:Loading ORDERS/LINEITEM...1040000
+Vuser 1:Loading ORDERS/LINEITEM...1050000
+Vuser 1:Loading ORDERS/LINEITEM...1060000
+Vuser 1:Loading ORDERS/LINEITEM...1070000
+Vuser 1:Loading ORDERS/LINEITEM...1080000
+Vuser 1:Loading ORDERS/LINEITEM...1090000
+Vuser 1:Loading ORDERS/LINEITEM...1100000
+Vuser 1:Loading ORDERS/LINEITEM...1110000
+Vuser 1:Loading ORDERS/LINEITEM...1120000
+Vuser 1:Loading ORDERS/LINEITEM...1130000
+Vuser 1:Loading ORDERS/LINEITEM...1140000
+Vuser 1:Loading ORDERS/LINEITEM...1150000
+Vuser 1:Loading ORDERS/LINEITEM...1160000
+Vuser 1:Loading ORDERS/LINEITEM...1170000
+Vuser 1:Loading ORDERS/LINEITEM...1180000
+Vuser 1:Loading ORDERS/LINEITEM...1190000
+Vuser 1:Loading ORDERS/LINEITEM...1200000
+Vuser 1:Loading ORDERS/LINEITEM...1210000
+Vuser 1:Loading ORDERS/LINEITEM...1220000
+Vuser 1:Loading ORDERS/LINEITEM...1230000
+Vuser 1:Loading ORDERS/LINEITEM...1240000
+Vuser 1:Loading ORDERS/LINEITEM...1250000
+Vuser 1:Loading ORDERS/LINEITEM...1260000
+Vuser 1:Loading ORDERS/LINEITEM...1270000
+Vuser 1:Loading ORDERS/LINEITEM...1280000
+Vuser 1:Loading ORDERS/LINEITEM...1290000
+Vuser 1:Loading ORDERS/LINEITEM...1300000
+Vuser 1:Loading ORDERS/LINEITEM...1310000
+Vuser 1:Loading ORDERS/LINEITEM...1320000
+Vuser 1:Loading ORDERS/LINEITEM...1330000
+Vuser 1:Loading ORDERS/LINEITEM...1340000
+Vuser 1:Loading ORDERS/LINEITEM...1350000
+Vuser 1:Loading ORDERS/LINEITEM...1360000
+Vuser 1:Loading ORDERS/LINEITEM...1370000
+Vuser 1:Loading ORDERS/LINEITEM...1380000
+Vuser 1:Loading ORDERS/LINEITEM...1390000
+Vuser 1:Loading ORDERS/LINEITEM...1400000
+Vuser 1:Loading ORDERS/LINEITEM...1410000
+Vuser 1:Loading ORDERS/LINEITEM...1420000
+Vuser 1:Loading ORDERS/LINEITEM...1430000
+Vuser 1:Loading ORDERS/LINEITEM...1440000
+Vuser 1:Loading ORDERS/LINEITEM...1450000
+Vuser 1:Loading ORDERS/LINEITEM...1460000
+Vuser 1:Loading ORDERS/LINEITEM...1470000
+Vuser 1:Loading ORDERS/LINEITEM...1480000
+Vuser 1:Loading ORDERS/LINEITEM...1490000
+Vuser 1:Loading ORDERS/LINEITEM...1500000
+Vuser 1:ORDERS and LINEITEM Done Rows 1..1500000
+Vuser 1:Loading TPCH TABLES COMPLETE
+Vuser 1:End:Thu Dec 24 04:16:25 UTC 2020
+Vuser 1:GATHERING SCHEMA STATISTICS
+Vuser 1:TPCH SCHEMA COMPLETE
+Vuser 1:FINISHED SUCCESS
+ALL VIRTUAL USERS COMPLETE
+                          TPC-H Driver Script
+hammerdb>
+TPC-H Driver Script
+Script loaded, Type "print script" to view
+
+hammerdb>vurun
+RUNNING - MySQL TPC-H
+Vuser 1:RUNNING
+Vuser 1:Executing Query 14 (1 of 22)
+Vuser 1:query 14 completed in 0.476 seconds
+Vuser 1:Executing Query 2 (2 of 22)
+
+Vuser 1:query 2 completed in 0.451 seconds
+Vuser 1:Executing Query 9 (3 of 22)
+Vuser 1:query 9 completed in 2.992 seconds
+Vuser 1:Executing Query 20 (4 of 22)
+Vuser 1:query 20 completed in 0.674 seconds
+Vuser 1:Executing Query 6 (5 of 22)
+Vuser 1:query 6 completed in 9.256 seconds
+Vuser 1:Executing Query 17 (6 of 22)
+Vuser 1:query 17 completed in 0.624 seconds
+Vuser 1:Executing Query 18 (7 of 22)
+Vuser 1:query 18 completed in 12.615 seconds
+Vuser 1:Executing Query 8 (8 of 22)
+Vuser 1:query 8 completed in 8.27 seconds
+Vuser 1:Executing Query 21 (9 of 22)
+Vuser 1:query 21 completed in 1.93 seconds
+Vuser 1:Executing Query 13 (10 of 22)
+Vuser 1:query 13 completed in 3.393 seconds
+Vuser 1:Executing Query 3 (11 of 22)
+Vuser 1:query 3 completed in 2.559 seconds
+Vuser 1:Executing Query 22 (12 of 22)
+Vuser 1:query 22 completed in 0.487 seconds
+Vuser 1:Executing Query 16 (13 of 22)
+Vuser 1:query 16 completed in 0.569 seconds
+Vuser 1:Executing Query 4 (14 of 22)
+Vuser 1:query 4 completed in 0.465 seconds
+Vuser 1:Executing Query 11 (15 of 22)
+Vuser 1:query 11 completed in 0.14 seconds
+Vuser 1:Executing Query 15 (16 of 22)
+Vuser 1:query 15 completed in 1.293 seconds
+Vuser 1:Executing Query 1 (17 of 22)
+Vuser 1:query 1 completed in 18.431 seconds
+Vuser 1:Executing Query 10 (18 of 22)
+Vuser 1:query 10 completed in 1.408 seconds
+Vuser 1:Executing Query 19 (19 of 22)
+Vuser 1:query 19 completed in 0.412 seconds
+Vuser 1:Executing Query 5 (20 of 22)
+Vuser 1:query 5 completed in 2.704 seconds
+Vuser 1:Executing Query 7 (21 of 22)
+Vuser 1:query 7 completed in 2.505 seconds
+Vuser 1:Executing Query 12 (22 of 22)
+Vuser 1:query 12 completed in 9.859 seconds
+Vuser 1:Completed 1 query set(s) in 81 seconds
+Vuser 1:FINISHED SUCCESS
+ALL VIRTUAL USERS COMPLETE
+                          TPC-H Driver Script
+
