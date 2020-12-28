@@ -302,7 +302,7 @@ Vuser 1:TEST RESULT : System achieved 7718 MySQL TPM at 2544 NOPM
 
 ##### cosbench 测试结果
 
-![](/home/jing2uo/Desktop/alauda/ssd/cosbench.png)
+![](/home/jing2uo/Project/alauda/myrook/test-result/ssd/cosbench.png)
 
 ### case 2 :  使用 pmem 存储 metadata 
 
@@ -357,13 +357,32 @@ _elapsed___errors_____ops(total)___ops/sec(cum)__avg(ms)__p50(ms)__p95(ms)__p99(
 ```shell
 # tpcc 结果
 _elapsed___errors_____ops(total)___ops/sec(cum)__avg(ms)__p50(ms)__p95(ms)__p99(ms)_pMax(ms)__total
-  300.0s        0       14619294        48730.6      3.9      1.2     14.7     54.5    486.5  read
+  300.0s        0              6            0.0     47.2     50.3     50.3     50.3     50.3  delivery
 
 _elapsed___errors_____ops(total)___ops/sec(cum)__avg(ms)__p50(ms)__p95(ms)__p99(ms)_pMax(ms)__total
-  300.0s        0         767120         2557.0     13.4      9.4     35.7     75.5    872.4  update
+  300.0s        0             62            0.2     29.2     27.3     41.9     71.3    104.9  newOrder
+
+_elapsed___errors_____ops(total)___ops/sec(cum)__avg(ms)__p50(ms)__p95(ms)__p99(ms)_pMax(ms)__total
+  300.0s        0              8            0.0      5.2      5.2      7.9      7.9      7.9  orderStatus
+
+_elapsed___errors_____ops(total)___ops/sec(cum)__avg(ms)__p50(ms)__p95(ms)__p99(ms)_pMax(ms)__total
+  300.0s        0             62            0.2     19.9     15.7     44.0     88.1    113.2  payment
+
+_elapsed___errors_____ops(total)___ops/sec(cum)__avg(ms)__p50(ms)__p95(ms)__p99(ms)_pMax(ms)__total
+  300.0s        0              5            0.0     14.9     15.2     15.7     15.7     15.7  stockLevel
 
 _elapsed___errors_____ops(total)___ops/sec(cum)__avg(ms)__p50(ms)__p95(ms)__p99(ms)_pMax(ms)__result
-  300.0s        0       15386414        51287.7      4.4      1.4     16.8     56.6    872.4  
+  300.0s        0            143            0.5     24.1     21.0     50.3    104.9    113.2  
+Audit check 9.2.1.7: SKIP: not enough delivery transactions to be statistically significant
+Audit check 9.2.2.5.1: SKIP: not enough orders to be statistically significant
+Audit check 9.2.2.5.2: SKIP: not enough orders to be statistically significant
+Audit check 9.2.2.5.3: PASS
+Audit check 9.2.2.5.4: PASS
+Audit check 9.2.2.5.5: SKIP: not enough payments to be statistically significant
+Audit check 9.2.2.5.6: SKIP: not enough order status transactions to be statistically significant
+
+_elapsed_______tpmC____efc__avg(ms)__p50(ms)__p90(ms)__p95(ms)__p99(ms)_pMax(ms)
+  300.0s       12.4  96.4%     29.2     27.3     39.8     41.9     71.3    104.9
 ```
 
 ```shell
@@ -415,7 +434,7 @@ Vuser 1:TEST RESULT : System achieved 8535 MySQL TPM at 2844 NOPM
 
 ##### cosbench 测试结果
 
-![](/home/jing2uo/Desktop/alauda/meta/cosbench.png)
+![](/home/jing2uo/Project/alauda/myrook/test-result/meta/cosbench.png)
 
 
 
@@ -434,61 +453,61 @@ Vuser 1:TEST RESULT : System achieved 8535 MySQL TPM at 2844 NOPM
 ```shell
 # bank 结果
 _elapsed___errors_____ops(total)___ops/sec(cum)__avg(ms)__p50(ms)__p95(ms)__p99(ms)_pMax(ms)__total
-  300.0s        0         167678          558.9    395.9     10.5    335.5  11811.2 103079.2  transfer
+  300.0s        0         448354         1494.5    149.7     10.0    352.3   1543.5  73014.4  transfer
 
 _elapsed___errors_____ops(total)___ops/sec(cum)__avg(ms)__p50(ms)__p95(ms)__p99(ms)_pMax(ms)__result
-  300.0s        0         167678          558.9    395.9     10.5    335.5  11811.2 103079.2  
+  300.0s        0         448354         1494.5    149.7     10.0    352.3   1543.5  73014.4  
 ```
 
 ```shell
 # movr 结果
 _elapsed___errors_____ops(total)___ops/sec(cum)__avg(ms)__p50(ms)__p95(ms)__p99(ms)_pMax(ms)__total
-  300.0s        0           1105            3.7      4.2      3.8      7.9     11.5     16.3  addUser
+  300.0s        0           1093            3.6      4.1      3.8      6.3     12.1     24.1  addUser
 
 _elapsed___errors_____ops(total)___ops/sec(cum)__avg(ms)__p50(ms)__p95(ms)__p99(ms)_pMax(ms)__total
-  300.0s        0            364            1.2      7.6      7.3     11.5     15.2     54.5  addVehicle
+  300.0s        0            361            1.2      7.5      7.3     10.5     12.6     19.9  addVehicle
 
 _elapsed___errors_____ops(total)___ops/sec(cum)__avg(ms)__p50(ms)__p95(ms)__p99(ms)_pMax(ms)__total
-  300.0s        0            380            1.3      8.9      8.9     12.6     16.8     23.1  applyPromoCode
+  300.0s        0            378            1.3      8.9      8.9     12.6     16.3     23.1  applyPromoCode
 
 _elapsed___errors_____ops(total)___ops/sec(cum)__avg(ms)__p50(ms)__p95(ms)__p99(ms)_pMax(ms)__total
-  300.0s        0            115            0.4      4.0      3.7      6.8     10.5     13.1  createPromoCode
+  300.0s        0            115            0.4      4.5      3.8     10.5     17.8     19.9  createPromoCode
 
 _elapsed___errors_____ops(total)___ops/sec(cum)__avg(ms)__p50(ms)__p95(ms)__p99(ms)_pMax(ms)__total
-  300.0s        0            272            0.9      4.4      3.9      9.4     11.5     26.2  endRide
+  300.0s        0            269            0.9      4.4      4.1      9.4     12.6     16.8  endRide
 
 _elapsed___errors_____ops(total)___ops/sec(cum)__avg(ms)__p50(ms)__p95(ms)__p99(ms)_pMax(ms)__total
-  300.0s        0          71022          236.7      1.0      1.0      1.3      1.6     44.0  readVehicles
+  300.0s        0          70320          234.4      1.0      1.0      1.4      1.6     29.4  readVehicles
 
 _elapsed___errors_____ops(total)___ops/sec(cum)__avg(ms)__p50(ms)__p95(ms)__p99(ms)_pMax(ms)__total
-  300.0s        0           1452            4.8     12.5     12.1     18.9     28.3     67.1  startRide
+  300.0s        0           1439            4.8     12.7     12.6     18.9     27.3     37.7  startRide
 
 _elapsed___errors_____ops(total)___ops/sec(cum)__avg(ms)__p50(ms)__p95(ms)__p99(ms)_pMax(ms)__total
-  300.0s        0           3688           12.3     54.0     52.4     75.5    134.2    209.7  updateActiveRides
+  300.0s        0           3655           12.2     53.9     52.4     75.5    125.8    159.4  updateActiveRides
 
 _elapsed___errors_____ops(total)___ops/sec(cum)__avg(ms)__p50(ms)__p95(ms)__p99(ms)_pMax(ms)__result
-  300.0s        0          78398          261.3      3.8      1.0     14.7     56.6    209.7  
+  300.0s        0          77630          258.8      3.9      1.0     14.7     56.6    159.4  
 ```
 
 ```shell
 # tpcc 结果
 _elapsed___errors_____ops(total)___ops/sec(cum)__avg(ms)__p50(ms)__p95(ms)__p99(ms)_pMax(ms)__total
-  300.0s        0              5            0.0     47.2     48.2     52.4     52.4     52.4  delivery
+  300.0s        0              6            0.0     47.5     46.1     60.8     60.8     60.8  delivery
 
 _elapsed___errors_____ops(total)___ops/sec(cum)__avg(ms)__p50(ms)__p95(ms)__p99(ms)_pMax(ms)__total
-  300.0s        0             67            0.2     34.7     29.4     92.3    134.2    142.6  newOrder
+  300.0s        0             62            0.2     31.7     29.4     58.7     92.3     92.3  newOrder
 
 _elapsed___errors_____ops(total)___ops/sec(cum)__avg(ms)__p50(ms)__p95(ms)__p99(ms)_pMax(ms)__total
-  300.0s        0              5            0.0      5.4      4.7      9.4      9.4      9.4  orderStatus
+  300.0s        0              6            0.0      5.4      5.5      6.6      6.6      6.6  orderStatus
 
 _elapsed___errors_____ops(total)___ops/sec(cum)__avg(ms)__p50(ms)__p95(ms)__p99(ms)_pMax(ms)__total
-  300.0s        0             55            0.2     18.4     15.7     27.3     58.7     79.7  payment
+  300.0s        0             66            0.2     16.8     15.7     22.0     35.7     56.6  payment
 
 _elapsed___errors_____ops(total)___ops/sec(cum)__avg(ms)__p50(ms)__p95(ms)__p99(ms)_pMax(ms)__total
-  300.0s        0              5            0.0    125.5     18.9    318.8    318.8    318.8  stockLevel
+  300.0s        0              7            0.0     16.5     15.7     27.3     27.3     27.3  stockLevel
 
 _elapsed___errors_____ops(total)___ops/sec(cum)__avg(ms)__p50(ms)__p95(ms)__p99(ms)_pMax(ms)__result
-  300.0s        0            137            0.5     30.9     25.2     75.5    268.4    318.8  
+  300.0s        0            147            0.5     23.9     18.9     46.1     92.3     92.3  
 Audit check 9.2.1.7: SKIP: not enough delivery transactions to be statistically significant
 Audit check 9.2.2.5.1: SKIP: not enough orders to be statistically significant
 Audit check 9.2.2.5.2: SKIP: not enough orders to be statistically significant
@@ -498,20 +517,19 @@ Audit check 9.2.2.5.5: SKIP: not enough payments to be statistically significant
 Audit check 9.2.2.5.6: SKIP: not enough order status transactions to be statistically significant
 
 _elapsed_______tpmC____efc__avg(ms)__p50(ms)__p90(ms)__p95(ms)__p99(ms)_pMax(ms)
-  300.0s       13.4 104.2%     34.7     29.4     39.8     92.3    134.2    142.6
-
+  300.0s       12.4  96.4%     31.7     29.4     37.7     58.7     92.3     92.3
 ```
 
 ```shell
 # ycsb 结果
 _elapsed___errors_____ops(total)___ops/sec(cum)__avg(ms)__p50(ms)__p95(ms)__p99(ms)_pMax(ms)__total
-  300.0s        0       15037198        50123.8      3.8      1.3     14.2     48.2    738.2  read
+  300.0s        0       16428552        54761.6      3.5      1.5     13.6     31.5   1208.0  read
 
 _elapsed___errors_____ops(total)___ops/sec(cum)__avg(ms)__p50(ms)__p95(ms)__p99(ms)_pMax(ms)__total
-  300.0s        0         789092         2630.3     12.7      8.4     35.7     79.7   1006.6  update
+  300.0s        0         862219         2874.1     11.6      8.9     29.4     56.6    973.1  update
 
 _elapsed___errors_____ops(total)___ops/sec(cum)__avg(ms)__p50(ms)__p95(ms)__p99(ms)_pMax(ms)__result
-  300.0s        0       15826290        52754.1      4.2      1.4     16.3     50.3   1006.6  
+  300.0s        0       17290771        57635.6      3.9      1.6     14.7     33.6   1208.0  
 ```
 
 ##### hammerdb 测试结果
@@ -551,7 +569,7 @@ Vuser 1:TEST RESULT : System achieved 10578 MySQL TPM at 3525 NOPM
 
 ##### cosbench 测试结果
 
-![](/home/jing2uo/Desktop/alauda/cas/cosbench.png)
+![](/home/jing2uo/Project/alauda/myrook/test-result/cas/cosbench.png)
 
 
 
