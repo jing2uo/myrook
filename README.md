@@ -272,32 +272,33 @@ Vuser 1:Completed 1 query set(s) in 81 seconds
 Vuser 1:FINISHED SUCCESS
 ```
 
+
+
 ```shell
 # tpc-c
-
-hammerdb>vudestroy
-hammerdb>vuset vu 1
-hammerdb>vucreate
-hammerdb>vurun
+vuset vu 1
 Vuser 1:TEST RESULT : System achieved 2762 MySQL TPM at 868 NOPM
 
-hammerdb>vudestroy
-hammerdb>vuset vu 2
-hammerdb>vucreate
-hammerdb>vurun
+vuset vu 2
 Vuser 1:TEST RESULT : System achieved 4791 MySQL TPM at 1571 NOPM
 
-hammerdb>vudestroy
-hammerdb>vuset vu 4
-hammerdb>vucreate
-hammerdb>vurun
+vuset vu 4
 Vuser 1:TEST RESULT : System achieved 7007 MySQL TPM at 2263 NOPM
 
-hammerdb>vudestroy
-hammerdb>vuset vu 8
-hammerdb>vucreate
-hammerdb>vurun
+vuset vu 8
 Vuser 1:TEST RESULT : System achieved 7718 MySQL TPM at 2544 NOPM
+
+vuset vu 16
+Vuser 1:TEST RESULT : System achieved 5939 MySQL TPM at 1850 NOPM
+
+vuset vu 32
+Vuser 1:TEST RESULT : System achieved 5536 MySQL TPM at 1826 NOPM
+
+vuset vu 64
+Vuser 1:TEST RESULT : System achieved 5840 MySQL TPM at 1813 NOPM
+
+vuset vu 128
+Vuser 1:TEST RESULT : System achieved 6219 MySQL TPM at 2053 NOPM
 ```
 
 ##### cosbench 测试结果
@@ -407,29 +408,29 @@ Vuser 1:Completed 1 query set(s) in 95 seconds
 ```shell
 # tpcc
 
-hammerdb>vudestroy
-hammerdb>vuset vu 1
-hammerdb>vucreate
-hammerdb>vurun
+vuset vu 1
 Vuser 1:TEST RESULT : System achieved 3062 MySQL TPM at 940 NOPM
 
-hammerdb>vudestroy
-hammerdb>vuset vu 2
-hammerdb>vucreate
-hammerdb>vurun
+vuset vu 2
 Vuser 1:TEST RESULT : System achieved 5479 MySQL TPM at 1848 NOPM
 
-hammerdb>vudestroy
-hammerdb>vuset vu 4
-hammerdb>vucreate
-hammerdb>vurun
+vuset vu 4
 Vuser 1:TEST RESULT : System achieved 7773 MySQL TPM at 2701 NOPM
 
-hammerdb>vudestroy
-hammerdb>vuset vu 8
-hammerdb>vucreate
-hammerdb>vurun
+vuset vu 8
 Vuser 1:TEST RESULT : System achieved 8535 MySQL TPM at 2844 NOPM
+
+vuset vu 16
+Vuser 1:TEST RESULT : System achieved 5483 MySQL TPM at 1796 NOPM
+
+vuset vu 32
+Vuser 1:TEST RESULT : System achieved 5453 MySQL TPM at 1816 NOPM
+
+vuset vu 64
+Vuser 1:TEST RESULT : System achieved 5216 MySQL TPM at 1732 NOPM
+
+vuset vu 128
+Vuser 1:TEST RESULT : System achieved 5424 MySQL TPM at 1901 NOPM
 ```
 
 ##### cosbench 测试结果
@@ -541,30 +542,29 @@ Vuser 1:Completed 1 query set(s) in 91 seconds
 
 ```shell
 # tpcc
-
-hammerdb>vudestroy
-hammerdb>vuset vu 1
-hammerdb>vucreate
-hammerdb>vurun
+>vuset vu 1
 Vuser 1:TEST RESULT : System achieved 3752 MySQL TPM at 1176 NOPM
 
-hammerdb>vudestroy
-hammerdb>vuset vu 2
-hammerdb>vucreate
-hammerdb>vurun
+vuset vu 2
 Vuser 1:TEST RESULT : System achieved 6650 MySQL TPM at 2307 NOPM
 
-hammerdb>vudestroy
-hammerdb>vuset vu 4
-hammerdb>vucreate
-hammerdb>vurun
+vuset vu 4
 Vuser 1:TEST RESULT : System achieved 9623 MySQL TPM at 3106 NOPM
 
-hammerdb>vudestroy
-hammerdb>vuset vu 8
-hammerdb>vucreate
-hammerdb>vurun
+vuset vu 8
 Vuser 1:TEST RESULT : System achieved 10578 MySQL TPM at 3525 NOPM
+
+vuset vu 16
+Vuser 1:TEST RESULT : System achieved 7597 MySQL TPM at 2520 NOPM
+
+vuset vu 32
+Vuser 1:TEST RESULT : System achieved 8168 MySQL TPM at 2755 NOPM
+
+vuset vu 64
+Vuser 1:TEST RESULT : System achieved 7260 MySQL TPM at 2447 NOPM
+
+vuset vu 128
+Vuser 1:TEST RESULT : System achieved 7801 MySQL TPM at 2619 NOPM
 ```
 
 ##### cosbench 测试结果
@@ -603,5 +603,17 @@ kubectl api-resources -o name --verbs=list --namespaced | xargs -n 1 kubectl get
 
 ```
 dd if=/dev/zero of=/dev/pmem0 bs=512 count=8
+```
+
+删除 Terminating 状态 ns
+
+```
+NAMESPACE=rook-ceph
+
+kubectl proxy &
+
+kubectl get namespace $NAMESPACE -o json |jq '.spec = {"finalizers":[]}' >temp.json
+
+curl -k -H "Content-Type: application/json" -X PUT --data-binary @temp.json localhost:8001/api/v1/namespaces/$NAMESPACE/finalize
 ```
 

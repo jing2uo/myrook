@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <workload name="s3-simple" description="simple benchmark for s3">
-  <auth type="none" config="username=cosbench;password=AQCaVMdfA/ZUIBAAsmBR3jkUEU6LBYCMIyiFZw==;auth_url=http://192.168.32.30:30928"/>
-  <storage type="s3" config="accesskey=8HS3G7MR99FYMZSG2UHO;secretkey=SqgLTCYFj0SEhgMEEODQSuGQl3EXseNGwREF13q9;endpoint=http://192.168.32.30:30928;timeout=600000"/>
+  <auth type="none" config="username=cosbench;password=AQCaVMdfA/ZUIBAAsmBR3jkUEU6LBYCMIyiFZw==;auth_url=http://192.168.32.30:31221"/>
+  <storage type="s3" config="accesskey=0DRHRXJ150CQ4EZC8KVK;secretkey=C5wZU45ENeFGjAavWnmJaZlDqX3RX9ZTA04G1fp7;endpoint=http://192.168.32.30:31221;timeout=600000"/>
 
   <workflow>
 
