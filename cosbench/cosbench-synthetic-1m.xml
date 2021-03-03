@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<workload name="Synthetic-1M" description="1M Synthetic workload" config="">
+    <auth type="none" config="username=cosbench;password=cosbench;auth_url=http://192.168.32.30:32489"/>
+    <storage type="s3" config="accesskey=1AM26050JMJI4JCC6B64;secretkey=fknQavkMtFXInTaCUlguI6L1xvcESfVOMOq1yEGM;endpoint=http://192.168.32.30:32489;timeout=600000"/>
+
+  <workflow>
+
+    <workstage name="init">
+      <work type="init" workers="1" config="containers=r(1,100)"></work>
+    </workstage>
+
+    <workstage name="prepare">
+      <work type="prepare" workers="10" config="containers=r(1,100);objects=r(1,500);sizes=c(1024)KB" />
+    </workstage>
+
+    <workstage name="read/write">
+      <work name="R/W" type="normal" workers="32" runtime="1200" >
+        <operation type="read" ratio="70" config="containers=u(1,100);objects=u(1,250)" />
+        <operation type="write" ratio="30" config="containers=u(1,100);objects=u(251,500);sizes=c(1024)KB" />
+      </work>
+    </workstage>
+
+    <workstage name="cleanup">
+      <work type="cleanup" workers="18" config="containers=r(1,100);objects=r(1,500)" />
+    </workstage>
+
+    <workstage name="dispose">
+      <work type="dispose" workers="18" config="containers=r(1,100)" />
+    </workstage>
+
+  </workflow>
+
+</workload>
